@@ -24,7 +24,8 @@ import json
 import re #regular expression
 import string
 import preprocessor as p
-import StockNewsAnalysis as sna
+import tools.StockNewsAnalysis as sna
+import tools.stock_prediction as stp
 
 import nltk
 from nltk.corpus import stopwords
@@ -87,4 +88,4 @@ st.write(test)
 # # plt.axis("off")
 # # plt.tight_layout(pad = 0)
 # # st.pyplot()
-stock_prediction = latest_predictions(symbol=selected_stock, root_dir='Stock-Prediction-models')[1]
+stock_prediction = stp.latest_predictions(symbol=selected_stock, root_dir='Stock-Prediction-models')[1]
