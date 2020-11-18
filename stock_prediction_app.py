@@ -8,9 +8,8 @@ from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
 import os
 import pandas as pd
-import matplotlib
 import matplotlib.pyplot as plt
-#matplotlib.use('TkAgg')
+
 
 
 
@@ -90,7 +89,8 @@ fig = plt.figure(figsize = (8, 8), facecolor = None)
 plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis("off")
 plt.tight_layout(pad = 0)
-#stock_prediction = stp.latest_predictions(symbol=selected_stock, root_dir='Stock-Prediction-models')[1]
+stock_prediction = stp.latest_predictions(symbol=selected_stock, root_dir='Stock-Prediction-models')[1]
+#st.dataframe(stock_prediction)
 #returns a dataframe (actual vs predicted)
 #the next business's days closing price
 
