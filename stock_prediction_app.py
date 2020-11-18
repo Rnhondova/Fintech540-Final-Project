@@ -91,7 +91,3 @@ plt.axis("off")
 plt.tight_layout(pad = 0)
 stock_prediction = stp.latest_predictions(symbol=selected_stock, root_dir='Stock-Prediction-models')[1]
 #st.dataframe(stock_prediction)
-#returns a dataframe (actual vs predicted)
-#the next business's days closing price
-
-#this is the app using stock predictions
