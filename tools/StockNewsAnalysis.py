@@ -99,7 +99,6 @@ def parse_news_data(news_tables):
 def get_raw_news_data_for_ticker(symbol):
     finwiz_url = 'https://finviz.com/quote.ashx?t='
     url = finwiz_url + symbol.lower()
-    print(url)
     req = Request(url=url,headers={'user-agent': 'my-app/0.0.1'}) 
     response = urlopen(req)    
     # Read the contents of the file into 'html'
@@ -254,15 +253,15 @@ def create_word_cloud(text_vec):
 
     # Display the generated image:
     # the matplotlib way:
-    plt.figure(figsize = (8, 8), facecolor = None) 
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis("off")
-    plt.tight_layout(pad = 0) 
-    plt.show()
-    
+    # plt.figure(figsize = (8, 8), facecolor = None)
+    # plt.imshow(wordcloud, interpolation='bilinear')
+    # plt.axis("off")
+    # plt.tight_layout(pad = 0)
+    # plt.show()
+    return wordcloud, get_vader_sentiment(text), get_textblob_sentiment(text)
     #Get sentiment score
-    print(get_vader_sentiment(text))
-    print(get_textblob_sentiment(text))
+    # print(get_vader_sentiment(text))
+    # print(get_textblob_sentiment(text))
     
     
 
