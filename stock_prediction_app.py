@@ -24,16 +24,15 @@ import json
 import re #regular expression
 import string
 import preprocessor as p
-import tools.StockNewsAnalysis as sna
-import tools.stock_prediction as stp
+import StockNewsAnalysis as sna
 
 import nltk
 from nltk.corpus import stopwords
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
-@st.cache
-nltk.download('vader_lexicon')
-@st.cache
-nltk.download('punkt')
+# @st.cache
+# nltk.download('vader_lexicon')
+# @st.cache
+# nltk.download('punkt')
 
 import plotly
 from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
@@ -79,13 +78,12 @@ tweets = tw.Cursor(api_.search,
 
 
 test = sna.get_tweets(api_,search_words,date_since,number_of_tweets = 10,include_retweets = False)
-st.write(test)
-# wordcloud, vader, blob = sna.create_word_cloud(test.clean_tweet)
-# pos = vader['pos']
-# st.markdown(f'Positive sentiment is {pos}')
-# # plt.figure(figsize = (8, 8), facecolor = None)
-# # plt.imshow(wordcloud, interpolation='bilinear')
-# # plt.axis("off")
-# # plt.tight_layout(pad = 0)
-# # st.pyplot()
+
+wordcloud, vader, blob = sna.create_word_cloud(test.clean_tweet)
+pos = vader['pos']
+st.markdown(f'Positive sentiment is {pos}')
+fig = plt.figure(figsize = (8, 8), facecolor = None)
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis("off")
+plt.tight_layout(pad = 0)
 stock_prediction = stp.latest_predictions(symbol=selected_stock, root_dir='Stock-Prediction-models')[1]
