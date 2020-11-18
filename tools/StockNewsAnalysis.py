@@ -254,15 +254,15 @@ def create_word_cloud(text_vec):
 
     # Display the generated image:
     # the matplotlib way:
-    plt.figure(figsize = (8, 8), facecolor = None) 
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis("off")
-    plt.tight_layout(pad = 0) 
-    plt.show()
-    
-    #Get sentiment score
-    print(get_vader_sentiment(text))
-    print(get_textblob_sentiment(text))
+    # plt.figure(figsize = (8, 8), facecolor = None)
+    # plt.imshow(wordcloud, interpolation='bilinear')
+    # plt.axis("off")
+    # plt.tight_layout(pad = 0)
+    # plt.show()
+    return wordcloud, get_vader_sentiment(text), get_textblob_sentiment(text)
+    # Get sentiment score
+    # print(get_vader_sentiment(text))
+    # print(get_textblob_sentiment(text))
     
     
 
