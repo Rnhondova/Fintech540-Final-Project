@@ -91,6 +91,6 @@ fig = plt.figure(figsize = (8, 8), facecolor = None)
 plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis("off")
 plt.tight_layout(pad = 0)
-print(preds)
+
 stock_prediction = stp.latest_predictions(symbol=selected_stock, root_dir='Stock_Prediction_models')[1]
 st.dataframe(stock_prediction)
