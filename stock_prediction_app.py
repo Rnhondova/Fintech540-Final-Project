@@ -96,9 +96,11 @@ st.write(fig2)
 
 #price_next_day = stock_prediction[['Predicted Price']].iloc[-1,:]
 price_next_day = stock_prediction.iloc[-1,1]
-price_last_day = np.round(stock_prediction.iloc[-2,0],2)
+price_last_day = stock_prediction.iloc[-2,0]
+change = price_next_day - price_last_day
 st.markdown(f'Last closing price for {selected_stock} was **${np.round(price_last_day, 2)}**. Prediction of the Next Closing Price is:')
 st.write(np.round(price_next_day,2))
+st.success(f'estimated change of {change}')
 st.markdown('\n')
 st.markdown('\n')
 st.markdown('\n')
