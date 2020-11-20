@@ -9,7 +9,7 @@ from urllib.request import urlopen, Request
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
-import plotly.express as px
+
 
 
 #Custom libraries
