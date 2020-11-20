@@ -70,7 +70,7 @@ plt.tight_layout(pad = 0)
 plt.title(f'Wordcloud for tweets relating to {selected_stock}')
 st.pyplot(fig)
 
-st.markdown(f'*Size of a word indicates it\'s frequency and importance*:\n', )
+st.markdown(f'*Size of a word indicates it\'s frequency and importance*\n', )
 
 st.empty()
 st.markdown('\n')
