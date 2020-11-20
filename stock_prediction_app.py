@@ -101,9 +101,9 @@ change = np.round(price_next_day - price_last_day, 2)
 st.markdown(f'Last closing price for {selected_stock} was **${np.round(price_last_day, 2)}**. Prediction of the Next Closing Price is:')
 st.write(np.round(price_next_day,2))
 if change > 0:
-    st.success(f'Estimated increase of {change}')
-else: 
-    st.warning(f'Estimated decrease of {change}')
+    st.success(f'Estimated increase of ${change}')
+else:
+    st.warning(f'Estimated decrease of ${change}')
 st.markdown('\n')
 st.markdown('\n')
 st.markdown('\n')
