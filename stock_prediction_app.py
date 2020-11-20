@@ -111,7 +111,7 @@ st.markdown(f'Subjectivity: {subjectivity}')
 st.markdown('🤔 [Wondering how to interpret sentiment scores?](https://en.wikipedia.org/wiki/Sentiment_analysis)')
 
 stock_prediction = stp.latest_predictions(symbol=selected_stock, root_dir='Stock_Prediction_models')[1]
-st.dataframe(stock_prediction)
+#st.dataframe(stock_prediction)
 fig2 = px.line(stock_prediction, x=stock_prediction.index, y=stock_prediction.columns,
 
               title=f'Prediction of Closing Price for {selected_stock} for the Next Business Day')
@@ -119,6 +119,6 @@ fig2.update_xaxes(title_text = 'Time')
 fig2.update_yaxes(title_text = 'Stock Price ($)')
 fig2.update_layout(legend_title_text='Price')
 st.write(fig2)
-st.markdown(f'Predicted price for {selected_stock}for the next business day:')
+st.markdown(f'Predicted price for {selected_stock} for the next business day:')
 price_next_day = stock_prediction[['Predicted Price']].tail(1)
 st.write(price_next_day)
