@@ -28,21 +28,6 @@ import preprocessor as p
 
 import nltk
 nltk.data.path.append(os.path.dirname(__file__))
-print('downloading nltk')
-#try:
-#   stopwords.words('english')
-#except LookupError:
-#   nltk.download('stopwords')
-#   stopwords.words('english')
-print('done')
-
-print('downloading punkt')
-#try:
-#   nltk.data.find('tokenizers/punkt')
-#except LookupError:
-#   nltk.download('punkt')
-print('done')
-
 
 from nltk.corpus import stopwords
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
