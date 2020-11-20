@@ -37,7 +37,7 @@ expander_bar.markdown("""
 **Description**: This apps allows you to check sentiment for the top S&P500 stocks for the past week and check the estimated closing price of the selected stock for the next business day.\n
 **Audience**: Short-term traders \n 
 **Data Sources**: yahoofinancials & alpha_vantage (python packages)\n 
-**Methods**: Sentiment analysis was conducted on Twitter Data for the past week. [LSTM](https://en.wikipedia.org/wiki/Long_short-term_memory) was used to predict clsoing price of the stock.\n 
+**Methods**: Sentiment analysis was conducted on Twitter Data for the past week. [LSTM](https://en.wikipedia.org/wiki/Long_short-term_memory) was used to predict closing price of the stock.\n 
 **Python Libraries**: Streamlit, nltk, textblob, wordcloud and others \n
 **Authors**: Ronald Nhondova and Alena Kalodzitsa\n """)
 
