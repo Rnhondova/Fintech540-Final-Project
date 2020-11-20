@@ -87,7 +87,7 @@ test = sna.get_tweets(api_,search_words,date_since,number_of_tweets = 10,include
 wordcloud, vader, blob = sna.create_word_cloud(test.clean_tweet)
 pos = vader['pos']
 neg = vader['neg']
-subjectivity = blob['subjectivity']
+subjectivity = blob.subjectivity
 
 fig = plt.figure(figsize = (8, 8), facecolor = None)
 plt.imshow(wordcloud, interpolation='bilinear')
