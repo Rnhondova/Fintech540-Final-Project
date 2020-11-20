@@ -1,4 +1,5 @@
 import streamlit as st
+import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -85,7 +86,7 @@ tweets = tw.Cursor(api_.search,
 test = sna.get_tweets(api_,search_words,date_since,number_of_tweets = 10,include_retweets = False)
 
 wordcloud, vader, blob = sna.create_word_cloud(test.clean_tweet)
-pos = vader['pos']
+pos = np.round(vader['pos'], 2)
 neg = vader['neg']
 subjectivity = blob.subjectivity
 
