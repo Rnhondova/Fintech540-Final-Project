@@ -100,7 +100,7 @@ st.markdown(f'Positive sentiment: {pos}')
 st.markdown(f'Negative Sentiment:{neg}')
 st.markdown(f'Subjectivity: {subjectivity}')
 
-st.markdown([How to interpret it?](https://en.wikipedia.org/wiki/Sentiment_analysis))
+st.markdown('[How to interpret it?](https://en.wikipedia.org/wiki/Sentiment_analysis)')
 
 stock_prediction = stp.latest_predictions(symbol=selected_stock, root_dir='Stock_Prediction_models')[1]
 st.dataframe(stock_prediction)
