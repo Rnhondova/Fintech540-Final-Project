@@ -82,12 +82,13 @@ tweets = tw.Cursor(api_.search,
 
 test = sna.get_tweets(api_,search_words,date_since,number_of_tweets = 10,include_retweets = False)
 
-wordcloud, vader, blob = sna.create_word_cloud(test.clean_tweet)
+wordcloud, vader, blob , preds = sna.create_word_cloud(test.clean_tweet)
 pos = vader['pos']
 st.markdown(f'Positive sentiment is {pos}')
 fig = plt.figure(figsize = (8, 8), facecolor = None)
 plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis("off")
 plt.tight_layout(pad = 0)
-stock_prediction = stp.latest_predictions(symbol=selected_stock, root_dir='Stock-Prediction-models')[1]
-#st.dataframe(stock_prediction)
+print(preds)
+stock_prediction = stp.latest_predictions(symbol=selected_stock, root_dir='Stock_Prediction_models')[1]
+st.dataframe(stock_prediction)

@@ -4,13 +4,13 @@ plotly
 bs4
 nltk
 textblob
+protobuf
 tweepy
-preprocessor
+tweet-preprocessor
 wordcloud
 keras
 alpha_vantage
 numpy
 yahoofinancials
 pendulum
-datetime
 holidays

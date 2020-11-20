@@ -30,6 +30,7 @@ import nltk
 from nltk.corpus import stopwords
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 
+
 consumer_key= 'OthHUPglwDY8It289lYXmfvNU'
 consumer_secret= 'tbJNuuLAi5mVq1xzmVyapYde08CVsAMGYGDafueXV2nEGJSbrq'
 access_token= '264003814-kJU4WfOnldjOomFz9u5jNp9iiJ7gbvaL1xgQUKXw'

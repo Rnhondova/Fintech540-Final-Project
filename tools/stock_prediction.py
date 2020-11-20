@@ -11,6 +11,7 @@ from yahoofinancials import YahooFinancials as yf
 import pendulum
 import datetime
 import holidays
+import os
 
 def get_stock_data(symbol='^VIX',start_date='2020-01-01'):
     today = str(pendulum.today().date())
@@ -141,7 +142,10 @@ def latest_predictions(symbol, root_dir='Stock-Prediction-models', use_alpha_van
             predictions_custom.columns = ['Actual Price']
 
             # Calling `save('my_model')` creates a SavedModel folder `my_model`.
-            reconstructed_model = eval("keras.models.load_model('%s/%s_model_gr_%sday_lag_%sday_forward')" % (root_dir, symbol, lag, forward_looking_days))
+            #file_name = os.path.dirname(__file__) +
+            path_model = os.path.dirname(__file__) +'/%s/%s_model_gr_%sday_lag_%sday_forward' % (root_dir, symbol, lag, forward_looking_days)
+            print(path_model)
+            reconstructed_model = eval("keras.models.load_model(path_model)")
 
             X_,y_ = getdata(close_data['close'].values[-150:],window_size)
             yhat = reconstructed_model.predict(X_[-100:])
