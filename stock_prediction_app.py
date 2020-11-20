@@ -116,5 +116,8 @@ st.dataframe(stock_prediction)
 st.markdown('Prediction of Closing Price for the Next Business Day')
 fig2 = px.line(stock_prediction, x=stock_prediction.index, y=stock_prediction.columns,
 
-              title='custom tick labels')
+              title=f'Prediction of Closing Price for {selected_stock} for the Next Business Day')
+fig2.update_xaxes(title_text = 'Time')
+fig2.update_yaxes(title_text = 'Stock Price ($)')
+fig2.update_layout(legend_title_text='Price')
 st.write(fig2)
