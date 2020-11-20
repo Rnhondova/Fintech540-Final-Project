@@ -73,11 +73,6 @@ selected_stock = st.selectbox('Stock', sorted(stocks))
 # Define the search term and the date_since date as variables
 search_words = "$" +selected_stock
 date_since = "2020-11-05"
-tweets = tw.Cursor(api_.search,
-                       q=search_words,
-                       lang="en",
-                       since=date_since).items(500)
-
 
 test = sna.get_tweets(api_,search_words,date_since,number_of_tweets = 250,include_retweets = False)
 
