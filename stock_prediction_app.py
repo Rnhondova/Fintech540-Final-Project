@@ -44,17 +44,17 @@ import plotly
 from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
 
 #display image
-image = Image.open('./img/word_cloud.png')
-st.image(image, width = 700)
+image = Image.open('./img/stocks.jpg')
+st.image(image, width = 900)
 st.title ('Stock Predictions for top 20 Stocks of S&P500 by Market Cap')
 
 
 #About
 expander_bar = st.beta_expander('About')
 expander_bar.markdown("""
-**Data Sources**: placeholder \n 
-**Python Libraries**: placeholder \n
-**References**: placeholder""")
+**Data Sources**: yahoofinancials & alpha_vantage (python packages)\n 
+**Python Libraries**: Streamlit, nltk, textblob, wordcloud and others \n
+**Authors**: Ronald Nhondova and Alena Kalodzitsa """)
 
 
 #Twitter authorization
