@@ -6,35 +6,17 @@ import plotly.graph_objects as go
 from PIL import Image
 # Import libraries
 from urllib.request import urlopen, Request
-from bs4 import BeautifulSoup
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
 
 
-
-# NLTK VADER for sentiment analysis
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
-
-# TextBlob
-from textblob import TextBlob
-
-#Twitter data imports
-import tweepy as tw
-from tweepy.streaming import StreamListener
-import json
-import re #regular expression
-import string
-import preprocessor as p
+#Custom libraries
 import tools.StockNewsAnalysis as sna
 import tools.stock_prediction as stp
 
-import nltk
 
-
-from nltk.corpus import stopwords
-from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 # @st.cache
 # nltk.download('vader_lexicon')
 # @st.cache
@@ -74,7 +56,7 @@ selected_stock = st.selectbox('Stock', sorted(stocks))
 search_words = "$" +selected_stock
 date_since = "2020-11-05"
 
-test = sna.get_tweets(api_,search_words,date_since,number_of_tweets = 250,include_retweets = False)
+test = sna.get_tweets(api_,search_words,date_since,number_of_tweets = 500,include_retweets = False)
 
 wordcloud, vader, blob = sna.create_word_cloud(test.clean_tweet)
 pos = np.round(vader['pos'], 2)
