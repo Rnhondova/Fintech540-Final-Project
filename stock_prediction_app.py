@@ -56,7 +56,7 @@ selected_stock = st.selectbox('Stock', sorted(stocks))
 search_words = "$" +selected_stock
 date_since = "2020-11-05"
 
-test = sna.get_tweets(api_,search_words,date_since,number_of_tweets = 500,include_retweets = False)
+test = sna.get_tweets(api_,search_words,date_since,number_of_tweets = 100,include_retweets = False)
 
 wordcloud, vader, blob = sna.create_word_cloud(test.clean_tweet)
 pos = np.round(vader['pos'], 2)
