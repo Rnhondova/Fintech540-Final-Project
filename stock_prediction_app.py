@@ -52,11 +52,11 @@ st.title ('Stock Predictions for top 20 Stocks of S&P500 by Market Cap')
 #About
 expander_bar = st.beta_expander('About')
 expander_bar.markdown("""
-**Description**: This apps allows you yo check sentiment for the top S&P500 stocks for the past week and 
+**Description**: This apps allows you to check sentiment for the top S&P500 stocks for the past week and check the estimated closing price of the selected stock for the next business day.\n
 **Data Sources**: yahoofinancials & alpha_vantage (python packages)\n 
-**Methods**: Sentiment analysis was conducted on Twitter Data for the past week. [LSTM](https://en.wikipedia.org/wiki/Long_short-term_memory) was used to predict clsoing price of the stock for the next business day. 
+**Methods**: Sentiment analysis was conducted on Twitter Data for the past week. [LSTM](https://en.wikipedia.org/wiki/Long_short-term_memory) was used to predict clsoing price of the stock.\n 
 **Python Libraries**: Streamlit, nltk, textblob, wordcloud and others \n
-**Authors**: Ronald Nhondova and Alena Kalodzitsa """)
+**Authors**: Ronald Nhondova and Alena Kalodzitsa\n """)
 
 
 #Twitter authorization
