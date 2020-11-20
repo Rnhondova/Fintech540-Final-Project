@@ -30,20 +30,7 @@ import tools.StockNewsAnalysis as sna
 import tools.stock_prediction as stp
 
 import nltk
-print('downloading nltk')
-try:
-   stopwords.words('english')
-except LookupError:
-   nltk.download('stopwords')
-   stopwords.words('english')
-print('done')
 
-print('downloading punkt')
-try:
-   nltk.data.find('tokenizers/punkt')
-except LookupError:
-   nltk.download('punkt')
-print('done')
 
 from nltk.corpus import stopwords
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
