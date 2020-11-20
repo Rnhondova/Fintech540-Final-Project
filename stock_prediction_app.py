@@ -96,12 +96,12 @@ plt.axis("off")
 plt.tight_layout(pad = 0)
 st.pyplot(fig)
 
-st.markdown(f'*Positive scores extracted from Twitter data for the past week*:\n')
-st.markdown(f'**Positive sentiment**: {pos}')
-st.markdown(f'**Negative sentiment**:{neg}')
-st.markdown(f'**Subjectivity**: {subjectivity}')
+st.markdown(f'**Positive scores extracted from Twitter data for the past week**:\n')
+st.markdown(f'*Positive sentiment*: {pos}')
+st.markdown(f'*Negative sentiment*: {neg}')
+st.markdown(f'*Subjectivity*: {subjectivity}')
 
-st.markdown('[How to interpret it?](https://en.wikipedia.org/wiki/Sentiment_analysis)')
+st.markdown('[🤔 Wondering how to interpret sentiment scores?](https://en.wikipedia.org/wiki/Sentiment_analysis)')
 
 stock_prediction = stp.latest_predictions(symbol=selected_stock, root_dir='Stock_Prediction_models')[1]
 st.dataframe(stock_prediction)
