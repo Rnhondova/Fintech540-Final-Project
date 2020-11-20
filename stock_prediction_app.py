@@ -79,7 +79,7 @@ tweets = tw.Cursor(api_.search,
                        since=date_since).items(500)
 
 
-test = sna.get_tweets(api_,search_words,date_since,number_of_tweets = 1000,include_retweets = False)
+test = sna.get_tweets(api_,search_words,date_since,number_of_tweets = 250,include_retweets = False)
 
 wordcloud, vader, blob = sna.create_word_cloud(test.clean_tweet)
 pos = np.round(vader['pos'], 2)
