@@ -86,12 +86,15 @@ test = sna.get_tweets(api_,search_words,date_since,number_of_tweets = 10,include
 
 wordcloud, vader, blob = sna.create_word_cloud(test.clean_tweet)
 pos = vader['pos']
-st.markdown(f'Positive sentiment is {pos}')
+neg = vader['neg']
+subjectivity = blob['subjectivity']
+
 fig = plt.figure(figsize = (8, 8), facecolor = None)
 plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis("off")
 plt.tight_layout(pad = 0)
 st.pyplot(fig)
+st.markdown(f'Positive sentiment: {pos} \n Negative Sentiment:{neg} \n Subjectivity: {subjectivity}')
 
 stock_prediction = stp.latest_predictions(symbol=selected_stock, root_dir='Stock_Prediction_models')[1]
 st.dataframe(stock_prediction)
