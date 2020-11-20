@@ -103,7 +103,7 @@ st.write(np.round(price_next_day,2))
 if change > 0:
     st.success(f'Estimated increase of ${change}')
 else:
-    st.warning(f'Estimated decrease of ${change}')
+    st.error(f'Estimated decrease of ${change}')
 st.markdown('\n')
 st.markdown('\n')
 st.markdown('\n')
