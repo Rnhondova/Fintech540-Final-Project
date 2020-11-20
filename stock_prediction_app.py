@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
-
+import plotly.express as px
 
 
 
@@ -50,7 +50,7 @@ st.title ('Stock Predictions for top 20 Stocks of S&P500 by Market Cap')
 
 
 #About
-expander_bar = st.beta_expander('About')
+expander_bar = st.beta_expander('About this App')
 expander_bar.markdown("""
 **Description**: This apps allows you to check sentiment for the top S&P500 stocks for the past week and check the estimated closing price of the selected stock for the next business day.\n
 **Data Sources**: yahoofinancials & alpha_vantage (python packages)\n 
@@ -102,7 +102,8 @@ st.pyplot(fig)
 st.markdown(f'*Size of a word indicates it\'s frequency and importance*:\n', )
 
 st.empty()
-st.markdown(f'**Sentiment Analysis**:\n')
+st.markdown(f'**Sentiment Analysis**:\n \n')
+st.markdown('\n')
 st.markdown(f'Positive sentiment: {pos}')
 st.markdown(f'Negative sentiment: {neg}')
 st.markdown(f'Subjectivity: {subjectivity}')
@@ -111,3 +112,9 @@ st.markdown('🤔 [Wondering how to interpret sentiment scores?](https://en.wiki
 
 stock_prediction = stp.latest_predictions(symbol=selected_stock, root_dir='Stock_Prediction_models')[1]
 st.dataframe(stock_prediction)
+
+st.markdown('Prediction of Closing Price for the Next Business Day')
+fig2 = px.line(stock_prediction, x=stock_prediction.index, y=stock_prediction.columns,
+
+              title='custom tick labels')
+st.write(fig2)
