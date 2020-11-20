@@ -53,6 +53,7 @@ st.title ('Stock Predictions for top 20 Stocks of S&P500 by Market Cap')
 expander_bar = st.beta_expander('About this App')
 expander_bar.markdown("""
 **Description**: This apps allows you to check sentiment for the top S&P500 stocks for the past week and check the estimated closing price of the selected stock for the next business day.\n
+**Audience**: Short-term traders /n 
 **Data Sources**: yahoofinancials & alpha_vantage (python packages)\n 
 **Methods**: Sentiment analysis was conducted on Twitter Data for the past week. [LSTM](https://en.wikipedia.org/wiki/Long_short-term_memory) was used to predict clsoing price of the stock.\n 
 **Python Libraries**: Streamlit, nltk, textblob, wordcloud and others \n
@@ -122,3 +123,4 @@ st.write(fig2)
 st.markdown(f'Predicted price for {selected_stock} for the next business day:')
 price_next_day = stock_prediction[['Predicted Price']].tail(1)
 st.write(price_next_day)
+st.markdown('Disclaimer: Current content is for informational purpose only and it is not intended to be financial advice.')
