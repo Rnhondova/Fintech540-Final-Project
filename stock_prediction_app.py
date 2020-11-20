@@ -62,17 +62,10 @@ expander_bar.markdown("""
 
 #Twitter authorization
 api_ = sna.get_twitter_authorization()
-import tweepy as tw
+
 import pandas as pd
 
-consumer_key= 'OthHUPglwDY8It289lYXmfvNU'
-consumer_secret= 'tbJNuuLAi5mVq1xzmVyapYde08CVsAMGYGDafueXV2nEGJSbrq'
-access_token= '264003814-kJU4WfOnldjOomFz9u5jNp9iiJ7gbvaL1xgQUKXw'
-access_token_secret= 'zbbTD8bi6JCn2M8oG9BkiKFOHG8orFxoT24pyxArWLf1U'
 
-auth = tw.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
-api_ = tw.API(auth, wait_on_rate_limit=True)
 stocks = ['AAPL', 'AMZN', 'MSFT', 'GOOGL', 'FB', 'V', 'WMT',
        'JNJ', 'TSLA', 'PG', 'MA', 'JPM', 'NVDA', 'UNH', 'HD', 'VZ', 'DIS',
        'ADBE', 'CRM']
