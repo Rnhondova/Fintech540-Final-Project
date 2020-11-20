@@ -142,9 +142,7 @@ def latest_predictions(symbol, root_dir='Stock-Prediction-models', use_alpha_van
             predictions_custom.columns = ['Actual Price']
 
             # Calling `save('my_model')` creates a SavedModel folder `my_model`.
-            #file_name = os.path.dirname(__file__) +
             path_model = os.path.dirname(__file__) +'/%s/%s_model_gr_%sday_lag_%sday_forward' % (root_dir, symbol, lag, forward_looking_days)
-            print(path_model)
             reconstructed_model = eval("keras.models.load_model(path_model)")
 
             X_,y_ = getdata(close_data['close'].values[-150:],window_size)
