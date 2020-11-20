@@ -67,7 +67,7 @@ fig = plt.figure(figsize = (8, 8), facecolor = None)
 plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis("off")
 plt.tight_layout(pad = 0)
-plt.title(f'Wordcloud for {selected_stock}')
+plt.title(f'Wordcloud for tweets relating to {selected_stock}')
 st.pyplot(fig)
 
 st.markdown(f'*Size of a word indicates it\'s frequency and importance*:\n', )
