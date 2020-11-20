@@ -93,9 +93,11 @@ fig2.update_xaxes(title_text = 'Time')
 fig2.update_yaxes(title_text = 'Stock Price ($)')
 fig2.update_layout(legend_title_text='Price')
 st.write(fig2)
-st.markdown(f'Prediction of Closing Price for {selected_stock} for the Next Business Day:')
+
 #price_next_day = stock_prediction[['Predicted Price']].iloc[-1,:]
-price_next_day = stock_prediction.iloc[[-1,1]]
+price_next_day = stock_prediction.iloc[-1,1]
+price_last_day = stock_prediction.iloc[-2,0]
+st.markdown(f'Last closing price for {selected_stock} was {price_last_day}. Prediction of Closing Price for the Next Business Day is:')
 st.write(price_next_day)
 st.markdown('\n')
 st.markdown('\n')
