@@ -8,7 +8,7 @@ protobuf
 tweepy
 tweet-preprocessor
 wordcloud
-tensorflow ==2.4.*
+tensorflow
 keras
 alpha_vantage
 numpy
